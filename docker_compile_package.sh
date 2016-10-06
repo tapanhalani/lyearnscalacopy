@@ -1,3 +1,3 @@
-sbt compile
+sudo sbt compile
 echo "hello tapan"
-sbt package
+sudo sbt package
