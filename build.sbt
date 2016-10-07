@@ -1,4 +1,4 @@
-name := """lyearn-backend"""
+name := """lyearnscalacopy"""
 
 version := "0.0.1"
 
@@ -9,7 +9,7 @@ libraryDependencies ++= Seq(
     "com.websudos" %% "phantom-dsl" % "1.28.15",
     "com.typesafe" % "config" % "1.3.1",
     "net.liftweb" %% "lift-json" % "3.0-M8"
-    
+
 )
 
 resolvers ++= Seq(
@@ -20,7 +20,7 @@ resolvers ++= Seq(
   "Compass Repository" 				 at "http://repo.compass-project.org",
   Resolver.sonatypeRepo("releases"),
   Resolver.bintrayRepo("websudos", "oss-releases")
-  
+
 )
 
 fork in run := true
@@ -46,3 +46,8 @@ dockerfile in docker := {
     entryPoint("java", "-cp", classpathString, mainclass)
   }
 }
+
+imageNames in docker := Seq(
+  // Sets the latest tag
+  ImageName(s"tapanhalani/lyearnscalacopy:latest")
+)
