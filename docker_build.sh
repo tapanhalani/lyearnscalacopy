@@ -2,4 +2,4 @@
 
 echo "hello tapan"
 pwd
-sbt docker
+DOCKER_API_VERSION=1.22 sbt docker
