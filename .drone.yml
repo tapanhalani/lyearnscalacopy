@@ -4,10 +4,11 @@ build:
     - /var/run/docker.sock:/var/run/docker.sock
   commands:
     - echo "hello tapan"
-    - docker ps
+    - DOCKER_API_VERSION=1.22 docker ps
     - sbt compile
     - echo "successful compilation"
     - sbt package
+    - DOCKER_API_VERSION=1.22 sbt docker 
   publish:
     docker:
       username: tapanhalani
