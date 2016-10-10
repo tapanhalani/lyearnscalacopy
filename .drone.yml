@@ -8,11 +8,11 @@ build:
     - sbt compile
     - echo "successful compilation"
     - sbt package
-    - DOCKER_API_VERSION=1.22 sbt docker 
+    - DOCKER_API_VERSION=1.22 sbt docker
   publish:
     docker:
       username: tapanhalani
       password: 28march1994
       email: tapanhalani231@gmail.com
       repo: tapanhalani/lyearnscalacopy
-      tag: latest
+      tag: dronebuild
