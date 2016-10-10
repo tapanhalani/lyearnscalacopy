@@ -2,4 +2,4 @@
 
 echo "hello tapan"
 pwd
-docker ps
+DOCKER_API_VERSION=1.22 docker ps
