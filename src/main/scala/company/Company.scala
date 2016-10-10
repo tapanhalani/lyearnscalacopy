@@ -1,6 +1,5 @@
 package company
 
-
 import java.util.UUID
 import user.AccountId
 import java.net.URL
