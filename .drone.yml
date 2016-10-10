@@ -3,7 +3,7 @@ build:
   commands:
     - echo "hello tapan"
     - docker
-    - sudo service docker start
+    - service docker start
     - sbt compile
     - echo "successful compilation"
     - sbt package
