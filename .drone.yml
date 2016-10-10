@@ -4,8 +4,8 @@ build:
     - /var/run/docker.sock:/var/run/docker.sock
   commands:
     - echo "hello tapan"
-    - sbt compile
     - docker ps
+    - sbt compile
     - echo "successful compilation"
     - sbt package
   publish:
