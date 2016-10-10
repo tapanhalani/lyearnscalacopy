@@ -7,11 +7,14 @@ build:
     - DOCKER_API_VERSION=1.22 docker ps
     - sbt compile
     - echo "successful compilation"
+    - touch tapanhalani.txt
     - sbt package
     - DOCKER_API_VERSION=1.22 sbt docker
     - DOCKER_API_VERSION=1.22 docker tag default/lyearnscalacopy:latest tapanhalani/lyearnscalacopy:dronebuild
   publish:
     docker:
+      environment:
+        - DOCKER_LAUNCH_DEBUG=true
       username: tapanhalani
       password: 28march1994
       email: tapanhalani231@gmail.com
