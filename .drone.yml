@@ -1,0 +1,6 @@
+build:
+  image: e8kor/sbt-docker
+  commands:
+    - echo "hello tapan"
+    - sbt compile
+    - echo "successful compilation"
