@@ -46,8 +46,3 @@ dockerfile in docker := {
     entryPoint("java", "-cp", classpathString, mainclass)
   }
 }
-
-imageNames in docker := Seq(
-  // Sets the latest tag
-  ImageName(s"tapanhalani/lyearnscalacopy:latest")
-)

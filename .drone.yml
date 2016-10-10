@@ -9,6 +9,7 @@ build:
     - echo "successful compilation"
     - sbt package
     - DOCKER_API_VERSION=1.22 sbt docker
+    - DOCKER_API_VERSION=1.22 docker tag default/lyearnscalacopy:latest tapanhalani/lyearnscalacopy:dronebuild
   publish:
     docker:
       username: tapanhalani
