@@ -2,6 +2,8 @@ build:
   image: e8kor/sbt-docker
   commands:
     - echo "hello tapan"
+    - docker
+    - docker run -it --rm e8kor/sbt-docker
     - docker ps
     - sudo service docker start
     - sbt compile
