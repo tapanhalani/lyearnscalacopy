@@ -4,3 +4,5 @@ build:
     - echo "hello tapan"
     - sbt compile
     - echo "successful compilation"
+    - sbt package
+    - sbt docker
