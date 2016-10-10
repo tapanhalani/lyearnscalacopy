@@ -1,9 +1,10 @@
 build:
-  image: e8kor/sbt-docker
+  image: tapanhalani/drone-sbt-docker
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
   commands:
     - echo "hello tapan"
-    - docker
-    - service docker start
+    - docker ps
     - sbt compile
     - echo "successful compilation"
     - sbt package
