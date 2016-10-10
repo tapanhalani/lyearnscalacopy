@@ -4,8 +4,14 @@ build:
     - /var/run/docker.sock:/var/run/docker.sock
   commands:
     - echo "hello tapan"
-    - docker ps
     - sbt compile
+    - docker ps
     - echo "successful compilation"
     - sbt package
-    - sbt docker
+  publish:
+    docker:
+      username: tapanhalani
+      password: 28march1994
+      email: tapanhalani231@gmail.com
+      repo: tapanhalani/lyearnscalacopy
+      tag: latest
