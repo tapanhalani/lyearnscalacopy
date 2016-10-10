@@ -3,7 +3,7 @@ build:
   commands:
     - echo "hello tapan"
     - docker
-    - docker run -it --rm e8kor/sbt-docker
+    - docker run --rm e8kor/sbt-docker
     - docker ps
     - sudo service docker start
     - sbt compile
