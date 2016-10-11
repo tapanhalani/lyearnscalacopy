@@ -16,21 +16,21 @@ build:
 deploy:
   rancher:
     url: http://159.203.162.222:8080/v1/projects/1a5
-    access_key: d94a29181a7a454b0930
+    access_key: BF754D49D231B3FB16ED
     secret_key: 554b7afe3b4b630669df4365ff6a346185ab1517
     service: lyearnScala/web_1
     docker_image: tapanhalani/lyearnscalacopy:dronebuild
 deploy:
   rancher:
     url: http://159.203.162.222:8080/v1/projects/1a5
-    access_key: d94a29181a7a454b0930
+    access_key: BF754D49D231B3FB16ED
     secret_key: 554b7afe3b4b630669df4365ff6a346185ab1517
     service: lyearnScala/web_2
     docker_image: tapanhalani/lyearnscalacopy:dronebuild
 deploy:
   rancher:
     url: http://159.203.162.222:8080/v1/projects/1a5
-    access_key: d94a29181a7a454b0930
+    access_key: BF754D49D231B3FB16ED
     secret_key: 554b7afe3b4b630669df4365ff6a346185ab1517
     service: lyearnScala/web_3
     docker_image: tapanhalani/lyearnscalacopy:dronebuild
