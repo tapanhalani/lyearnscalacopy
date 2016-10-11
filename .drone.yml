@@ -4,9 +4,9 @@ build:
     - /var/run/docker.sock:/var/run/docker.sock
   commands:
     - echo "hello tapan"
-    - ls -a /root
     - DOCKER_API_VERSION=1.22 docker ps
     - sbt compile
+    - ls -a /root
     - echo "successful compilation"
     - touch tapanhalani.txt
     - sbt package
