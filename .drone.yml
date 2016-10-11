@@ -17,7 +17,7 @@ build:
 cache:
   mount:
     - project
-    - .git
+    - /root/.ivy2
 deploy:
   rancher:
     url: http://159.203.162.222:8080/v1/projects/1a5
