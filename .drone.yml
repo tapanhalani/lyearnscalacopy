@@ -13,7 +13,6 @@ build:
     - DOCKER_API_VERSION=1.22 docker tag default/lyearnscalacopy:latest tapanhalani/lyearnscalacopy:dronebuild
 publish:
   docker:
-    storage_driver: overlay
     username: tapanhalani
     password: $$DOCKERHUB_PASSWORD
     email: tapanhalani231@gmail.com
