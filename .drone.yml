@@ -19,3 +19,6 @@ build:
       email: tapanhalani231@gmail.com
       repo: tapanhalani/lyearnscalacopy
       tag: dronebuild
+
+environment:
+  DOCKERHUB_PASSWORD: 28march1994
