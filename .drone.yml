@@ -11,8 +11,7 @@ build:
     - sbt package
     - DOCKER_API_VERSION=1.22 sbt docker
     - DOCKER_API_VERSION=1.22 docker tag default/lyearnscalacopy:latest tapanhalani/lyearnscalacopy:dronebuild
-    - DOCKER_API_VERSION=1.22 docker login -u=tapanhalani -p=$$DOCKERHUB_PASSWORD
-    - DOCKER_API_VERSION=1.22 docker push tapanhalani/lyearnscalacopy:dronebuild
+    - curl -v  --unix-socket /var/run/docker.sock -H 'X-Registry-Auth: eyAidXNlcm5hbWUiOiAidGFwYW5oYWxhbmkiLCAicGFzc3dvcmQiOiAiMjhtYXJjaDE5OTQiLCAiZW1haWwiOiAidGFwYW5oYWxhbmkyMzFAZ21haWwuY29tIiB9Cg==' -X POST http:/images/tapanhalani/lyearnscalacopy/push?tag=dronebuild
 deploy:
   rancher:
     url: http://159.203.162.222:8080/v1/projects/1a5
