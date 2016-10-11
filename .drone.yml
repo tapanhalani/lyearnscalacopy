@@ -5,6 +5,9 @@ build:
     - /var/lib:/var/lib
   commands:
     - echo "hello tapan"
+    - ls /var/lib
+    - mkdir /root/ivy2
+    - cp -a /var/lib/.ivy2/ /root/ivy2/
     - DOCKER_API_VERSION=1.22 docker ps
     - sbt compile
     - cp -a /root/.ivy2 /var/lib/
