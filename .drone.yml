@@ -2,11 +2,13 @@ build:
   image: tapanhalani/drone-sbt-docker
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
+    - /var/lib:/var/lib
   commands:
     - echo "hello tapan"
     - DOCKER_API_VERSION=1.22 docker ps
     - sbt compile
-    - ls -a /root
+    - cp -a /root/.ivy2 /var/lib/
+    - ls -a /var/lib
     - echo "successful compilation"
     - touch tapanhalani.txt
     - sbt package
