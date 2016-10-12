@@ -1,4 +1,4 @@
-name := """lyearn-backend"""
+name := """lyearnscalacopy"""
 
 version := "0.0.1"
 
