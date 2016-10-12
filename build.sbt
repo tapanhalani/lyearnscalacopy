@@ -1,4 +1,4 @@
-name := """lyearnscalacopy"""
+name := """lyearn-backend"""
 
 version := "0.0.1"
 
@@ -6,21 +6,18 @@ scalaVersion := "2.11.8"
 
 libraryDependencies ++= Seq(
     "org.scalatest" %% "scalatest" % "2.2.4" % "test",
-    "com.websudos" %% "phantom-dsl" % "1.28.15",
     "com.typesafe" % "config" % "1.3.1",
-    "net.liftweb" %% "lift-json" % "3.0-M8"
-
-)
-
-resolvers ++= Seq(
-  "Java.net Maven2 Repository"       at "http://download.java.net/maven/2/",
-  "Twitter Repository"               at "http://maven.twttr.com",
-  "Typesafe Repo" 					 at "http://repo.typesafe.com/typesafe/releases/",
-  "Maven central" 					 at "http://repo1.maven.org/maven2/",
-  "Compass Repository" 				 at "http://repo.compass-project.org",
-  Resolver.sonatypeRepo("releases"),
-  Resolver.bintrayRepo("websudos", "oss-releases")
-
+    "com.fasterxml.uuid" % "java-uuid-generator" % "3.1.3",
+    "org.tpolecat" %% "doobie-core" % "0.3.0",
+    "org.tpolecat" %% "doobie-contrib-postgresql" % "0.3.0",
+    "org.tpolecat" %% "doobie-contrib-specs2" % "0.3.0",
+    "org.apache.thrift" % "libthrift" % "0.9.3",
+    "com.twitter" %% "scrooge-core" % "4.10.0",
+    "com.twitter" %% "finagle-thrift" % "6.38.0",
+    "org.apache.commons" % "commons-lang3" % "3.4",
+    "org.postgresql" % "postgresql" % "9.4.1211.jre7",
+    "org.slf4j" % "slf4j-log4j12" % "1.7.21",
+    "com.zaxxer" % "HikariCP" % "2.5.1"
 )
 
 fork in run := true
