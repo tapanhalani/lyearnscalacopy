@@ -4,7 +4,7 @@ build:
     - /var/run/docker.sock:/var/run/docker.sock
     - /var/lib:/var/lib
   commands:
-    - echo $DRONE_BRANCH
+    - echo $DRONE_REPO_NAME
     - echo tapanhalani/lyearnscalacopy:$DRONE_BRANCH
     - ls -a /var/lib
     - mkdir /root/.ivy2
