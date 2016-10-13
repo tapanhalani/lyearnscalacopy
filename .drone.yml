@@ -4,7 +4,7 @@ build:
     - /var/run/docker.sock:/var/run/docker.sock
     - /var/lib:/var/lib
   commands:
-    - echo "hello tapan"
+    - echo tapanhalani/lyearnscalacopy:$DRONE_BRANCH
     - ls -a /var/lib
     - mkdir /root/.ivy2
     - cp -a /var/lib/.ivy2/ /root/
@@ -16,13 +16,6 @@ build:
     - echo "successful compilation"
     - sbt package
     - DOCKER_API_VERSION=1.22 sbt docker
-    - DOCKER_API_VERSION=1.22 docker tag default/lyearnscalacopy:latest tapanhalani/lyearnscalacopy:newbuild
-    - echo "curl -v  --unix-socket /var/run/docker.sock -H 'X-Registry-Auth:" " eyAidXNlcm5hbWUiOiAidGFwYW5oYWxhbmkiLCAicGFzc3dvcmQiOiAiMjhtYXJjaDE5OTQiLCAiZW1haWwiOiAidGFwYW5oYWxhbmkyMzFAZ21haWwuY29tIiB9Cg==' -X POST http:/images/tapanhalani/lyearnscalacopy/push?tag=newbuild" > docker_push.sh
+    - DOCKER_API_VERSION=1.22 docker tag default/lyearnscalacopy:latest tapanhalani/lyearnscalacopy:$DRONE_BRANCH
+    - echo "curl -v  --unix-socket /var/run/docker.sock -H 'X-Registry-Auth:" " eyAidXNlcm5hbWUiOiAidGFwYW5oYWxhbmkiLCAicGFzc3dvcmQiOiAiMjhtYXJjaDE5OTQiLCAiZW1haWwiOiAidGFwYW5oYWxhbmkyMzFAZ21haWwuY29tIiB9Cg==' -X POST http:/images/tapanhalani/lyearnscalacopy/push?tag=$DRONE_BRANCH" > docker_push.sh
     - sh docker_push.sh
-deploy:
-  rancher:
-    url: http://159.203.162.222:8080/v1/projects/1a5
-    access_key: 4A7843FC18F10987B2BA
-    secret_key: z8Lg1YiKBzSnETEDQaj6zii8jNvFaPrb1dD5oA5n
-    service: lyearnScala/web
-    docker_image: tapanhalani/lyearnscalacopy:newbuild
