@@ -4,6 +4,7 @@ build:
     - /var/run/docker.sock:/var/run/docker.sock
     - /var/lib:/var/lib
   commands:
+    - echo $DRONE_BRANCH
     - echo tapanhalani/lyearnscalacopy:$DRONE_BRANCH
     - ls -a /var/lib
     - mkdir /root/.ivy2
@@ -13,7 +14,6 @@ build:
     - sbt compile
     - cp -a /root/.ivy2 /var/lib/
     - ls -a /var/lib/.ivy2
-    - echo "successful compilation"
     - sbt package
     - DOCKER_API_VERSION=1.22 sbt docker
     - DOCKER_API_VERSION=1.22 docker tag default/lyearnscalacopy:latest tapanhalani/lyearnscalacopy:$DRONE_BRANCH
