@@ -4,12 +4,9 @@ build:
     - /var/run/docker.sock:/var/run/docker.sock
     - /var/lib:/var/lib
   commands:
-    - echo $DRONE_REPO_NAME
-    - echo tapanhalani/lyearnscalacopy:$DRONE_BRANCH
     - ls -a /var/lib
-    - mkdir /root/.ivy2
-    - cp -a /var/lib/.ivy2/ /root/
-    - ls -a /root/.ivy2/
+    - echo -e 'DIRECTORY=/var/lib/.ivy2\nif [ -d "$DIRECTORY" ]; then\n\tmkdir /root/.ivy2\n\tcp -a /var/lib/.ivy2/ /root/\n\tls -a /root/.ivy2/\nelse\n\techo ".ivy2 directory not found."\nfi' > cache_script.sh
+    - sh cache_script.sh
     - DOCKER_API_VERSION=1.22 docker ps
     - sbt compile
     - cp -a /root/.ivy2 /var/lib/
